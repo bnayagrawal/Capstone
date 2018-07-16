@@ -7,6 +7,14 @@ public final class Sources {
     private String status;
     private Collection<SourceDetails> sources;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public Collection<SourceDetails> getSources() {
+        return sources;
+    }
+
     public class SourceDetails {
 
         private String id;

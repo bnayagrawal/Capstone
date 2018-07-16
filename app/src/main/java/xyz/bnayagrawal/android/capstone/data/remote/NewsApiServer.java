@@ -27,7 +27,6 @@ public final class NewsApiServer {
     //Keywords or a phrase to search for. advanced search supported for {@link ENDPOINT_EVERYTHING}
     public static final String QUERY_PARAM_QUERY = "q";
 
-
     /*
      * Query parameters for all endpoints
      */
@@ -37,7 +36,6 @@ public final class NewsApiServer {
 
     //The category you want to get headlines for
     public static final String ALL_QUERY_PARAM_CATEGORY = "category";
-
 
     /*
      * Query parameters for {@link ENDPOINT_EVERYTHING}
@@ -79,7 +77,7 @@ public final class NewsApiServer {
 
     //Possible options for parameter "category"
     public static final String[] POSSIBLE_CATEGORY_OPTIONS = {
-            "business", "entertainment", "general", "health", "science", "sports", "technology"
+            "general", "business", "entertainment", "health", "science", "sports", "technology"
     };
 
     //Possible options for parameter "language"
@@ -92,4 +90,16 @@ public final class NewsApiServer {
             "relevancy", "popularity", "publishedAt"
     };
 
+    /*
+     * Status codes returned on request
+     */
+    public static final String STATUS_OK = "ok";
+    public static final String STATUS_ERROR = "error";
+
+    /*
+     * News types
+     */
+    public enum NewsType {
+        TOP_HEADLINES, EVERYTHING
+    }
 }

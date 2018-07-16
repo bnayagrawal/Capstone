@@ -48,17 +48,21 @@ public final class Article {
         return publishedAt;
     }
 
+    public void setPublishedAt(String publishedAt) { this.publishedAt = publishedAt; }
+
+    public void setAuthor(String author) {this.author = author;}
+
     public final class Source {
 
-        private int id;
+        private String id;
         private String name;
 
-        public Source(int id, String name) {
+        public Source(String id, String name) {
             this.id = id;
             this.name = name;
         }
 
-        public int getId() {
+        public String getId() {
             return id;
         }
 

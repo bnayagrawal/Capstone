@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Capstone</string>
     <!-- activities -->
-    <string name="title_activity_main">News</string>
+    <string name="title_activity_main">News Reader</string>
 </resources>

@@ -24,7 +24,9 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorHeight="4dp"
+            style="?android:attr/tabWidgetStyle"
+            app:tabTextColor="?android:attr/textColorSecondary"
+            app:tabIndicatorHeight="2dp"
             app:tabMode="scrollable"
             app:tabGravity="fill"/>
 
@@ -35,5 +37,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_news_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_news"
+        android:tint="@android:color/white"
+        android:layout_gravity="bottom|end"/>
 
 </android.support.design.widget.CoordinatorLayout>
