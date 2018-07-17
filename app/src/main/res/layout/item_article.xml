@@ -5,15 +5,20 @@
         <import type="android.view.View"/>
         <import type="xyz.bnayagrawal.android.capstone.util.MyDate"/>
         <variable
+            name="Presenter"
+            type="xyz.bnayagrawal.android.capstone.feature.news.ArticlePresenter"/>
+        <variable
             name="Article"
             type="xyz.bnayagrawal.android.capstone.data.model.Article" />
     </data>
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/list_item"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="@{()->Presenter.onItemClick(listItem,Article)}"
         android:background="@drawable/ripple_effect">
 
         <ImageView

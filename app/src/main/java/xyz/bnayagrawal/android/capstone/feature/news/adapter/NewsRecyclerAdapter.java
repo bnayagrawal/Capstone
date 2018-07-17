@@ -1,6 +1,7 @@
 package xyz.bnayagrawal.android.capstone.feature.news.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,8 @@ import java.util.Collection;
 import xyz.bnayagrawal.android.capstone.R;
 import xyz.bnayagrawal.android.capstone.data.model.Article;
 import xyz.bnayagrawal.android.capstone.databinding.ItemArticleBinding;
+import xyz.bnayagrawal.android.capstone.feature.article.ArticleActivity;
+import xyz.bnayagrawal.android.capstone.feature.news.ArticlePresenter;
 
 public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapter.ViewHolder> {
 
@@ -33,6 +36,7 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
         LayoutInflater inflater = LayoutInflater.from(context);
 
         ItemArticleBinding binding = DataBindingUtil.inflate(inflater, R.layout.item_article, parent, false);
+        binding.setPresenter(new ArticlePresenter());
         return new ViewHolder(binding);
     }
 
