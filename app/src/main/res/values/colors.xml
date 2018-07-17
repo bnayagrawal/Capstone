@@ -4,6 +4,7 @@
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#e0e0e0</color>
     <color name="colorAccent">#E62118</color>
+    <color name="rippleColor">#56e62118</color>
 
     <!-- Dark theme -->
     <color name="colorDarkPrimary">#212121</color>

@@ -9,6 +9,15 @@
         app:showAsAction="always"/>
 
     <item
+        android:id="@+id/action_filter"
+        android:title="Filter"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_filter"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_settings"
         android:title="settings"
+        android:orderInCategory="3"
         app:showAsAction="never"/>
 </menu>

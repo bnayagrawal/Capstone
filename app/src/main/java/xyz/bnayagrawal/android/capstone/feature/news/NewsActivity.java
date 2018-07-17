@@ -45,8 +45,6 @@ public class NewsActivity extends AppCompatActivity {
     private void setupToolbar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        //getSupportActionBar().setIcon(R.drawable.ic_news);
-        //getSupportActionBar().setSubtitle("Top Headlines");
     }
 
     /**

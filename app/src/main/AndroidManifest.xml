@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xyz.bnayagrawal.android.capstone">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".CapstoneApplication"
@@ -11,15 +11,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeBlack">
-        <activity
-            android:name=".feature.news.NewsActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".feature.news.NewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".feature.article.NewsDetail" />
+        <activity android:name=".feature.search.SearchActivity"></activity>
     </application>
 
 </manifest>
