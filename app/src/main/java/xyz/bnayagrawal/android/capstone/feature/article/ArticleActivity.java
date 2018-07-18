@@ -22,9 +22,6 @@ public class ArticleActivity extends AppCompatActivity {
     public static final String EXTRA_ARTICLE =
             "xyz.bnayagrawal.android.capstone.feature.article";
 
-    @BindView(R.id.toolbar_article)
-    Toolbar toolbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +44,6 @@ public class ArticleActivity extends AppCompatActivity {
             finish();
         }
 
-        setSupportActionBar(toolbar);
     }
 
     /**

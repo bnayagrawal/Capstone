@@ -1,85 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout>
     <data>
         <import type="android.view.View" />
         <import type="xyz.bnayagrawal.android.capstone.util.MyDate" />
         <variable
             name="Activity"
-            type="xyz.bnayagrawal.android.capstone.feature.article.ArticleActivity"/>
+            type="xyz.bnayagrawal.android.capstone.feature.article.ArticleActivity" />
         <variable
             name="Article"
             type="xyz.bnayagrawal.android.capstone.data.model.Article" />
     </data>
 
-    <android.support.design.widget.CoordinatorLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:context=".feature.article.ArticleActivity">
+        android:fillViewport="true">
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/app_bar"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/app_bar_height"
-            android:fitsSystemWindows="true"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_height="0dp"
+            android:background="?attr/layoutBackground">
 
-            <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@+id/toolbar"
+            <FrameLayout
+                android:id="@+id/frm_layout_header"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
-                app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:toolbarId="@+id/toolbar_article">
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/img_article_image"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fitsSystemWindows="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_placeholder_thumb"
-                    app:layout_collapseMode="parallax" />
+                    android:layout_height="180dp"
+                    android:background="?attr/layoutBackground"
+                    android:src="@drawable/ic_placeholder_thumb" />
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar_article"
-                    app:title="@{Article.title}"
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin"
-                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+                    android:layout_height="180dp"
+                    android:background="@drawable/article_thumbnail_overlay" />
 
-            </android.support.design.widget.CollapsingToolbarLayout>
-        </android.support.design.widget.AppBarLayout>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/action_button_background"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_arrow_back" />
 
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lora"
+                    android:maxLines="2"
+                    android:padding="8dp"
+                    android:text="@{Article.title}"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </FrameLayout>
 
-            <TextView
-                android:id="@+id/tv_description"
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/text_margin"
+                android:layout_margin="@dimen/fab_margin"
+                android:onClick="@{()->Activity.onFabShareClick(Article.url)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_share" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/lora"
+                android:text="@{Article.publishedAt}"
                 android:textColor="?android:attr/textColorSecondary"
-                android:text="@{Article.description}" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frm_layout_header" />
 
-        </android.support.v4.widget.NestedScrollView>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/lora"
+                android:text="@{Article.description}"
+                android:textColor="?android:attr/textColorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab_share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
-            android:onClick="@{()->Activity.onFabShareClick(Article.url)}"
-            app:layout_anchor="@id/app_bar"
-            app:layout_anchorGravity="bottom|end"
-            app:srcCompat="@drawable/ic_share" />
-
-    </android.support.design.widget.CoordinatorLayout>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 </layout>
