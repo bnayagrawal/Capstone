@@ -17,7 +17,6 @@ import java.util.Collection;
 import xyz.bnayagrawal.android.capstone.R;
 import xyz.bnayagrawal.android.capstone.data.model.Article;
 import xyz.bnayagrawal.android.capstone.databinding.ItemArticleBinding;
-import xyz.bnayagrawal.android.capstone.feature.article.ArticleActivity;
 import xyz.bnayagrawal.android.capstone.feature.news.ArticlePresenter;
 
 public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapter.ViewHolder> {
